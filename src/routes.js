@@ -7,11 +7,12 @@ import { UseMemoPage } from './pages/useMemoPage';
 import { UseRefPage } from './pages/useRefPage';
 import { UserContextProvider } from './contexts/userContext';
 
+// Componente que define as rotas da aplicação
 const AppRoutes = () => {
     return (
-        <Router>
-            <UserContextProvider>
-                <Routes>
+        <Router> {/* Configura o roteamento da aplicação */}
+            <UserContextProvider> {/* Envolve as rotas com o provedor de contexto do usuário */}
+                <Routes> {/* Define as rotas da aplicação */}
                     <Route path='/' element={<Homepage />} />
                     <Route path='/useState' element={<UseStatePage />} />
                     <Route path='/useEffect' element={<UseEffectPage />} />
@@ -21,7 +22,7 @@ const AppRoutes = () => {
                 </Routes>
             </UserContextProvider>
         </Router>
-    )
+    );
 }
 
 export { AppRoutes };
