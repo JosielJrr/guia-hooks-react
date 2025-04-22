@@ -2,11 +2,11 @@ import { useState, useCallback } from "react";
 
 const UseCallBackPage = () => {
 
-    // Declaração dos estados `name` e `password`
+    // Declara os estados `name` e `password`
     const [name, setName] = useState('');
     const [password, setPassword] = useState();
 
-    // useCallback memoriza a função `onChangeName` para evitar sua recriação desnecessária
+    // Memoriza a função `onChangeName` para evitar sua recriação desnecessária
     const onChangeName = useCallback((event) => {
         setName(event.target.value);
     }, []); // Dependências vazias significam que a função não será recriada
@@ -24,6 +24,7 @@ const UseCallBackPage = () => {
             <input
                 placeholder="Senha"
                 value={password}
+                // Atualiza o estado `password` com o valor digitado no input
                 onChange={(event) => setPassword(event.target.value)} />
         </>
     );

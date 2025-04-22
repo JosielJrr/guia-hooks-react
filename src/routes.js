@@ -11,7 +11,7 @@ import { UserContextProvider } from './contexts/userContext';
 const AppRoutes = () => {
     return (
         <Router> {/* Configura o roteamento da aplicação */}
-            <UserContextProvider> {/* Envolve as rotas com o provedor de contexto do usuário */}
+            <UserContextProvider> {/* Envolve as rotas com o provedor de contexto */}
                 <Routes> {/* Define as rotas da aplicação */}
                     <Route path='/' element={<Homepage />} />
                     <Route path='/useState' element={<UseStatePage />} />

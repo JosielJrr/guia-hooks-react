@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/userContext";
 
-// Componente Homepage
 const Homepage = () => {
-    // Acessa o contexto de usuário usando useContext
+
+    // Acessa o valor do contexto usando useContext
     const user = useContext(UserContext);
 
     return (

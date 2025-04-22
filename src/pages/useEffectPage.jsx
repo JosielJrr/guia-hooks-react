@@ -2,29 +2,30 @@ import { useState, useEffect } from "react";
 
 const UseEffectPage = () => {
 
-    // Declaração dos estados `name` e `password`
-    const [name, setName] = useState(''); // Estado para armazenar o valor do nome
-    const [password, setPassword] = useState(); // Estado para armazenar o valor da senha
+    // Declara os estados `name` e `password`
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState();
 
-    // Hook useEffect que será executado após a renderização do componente
+    // Executado após a primeira renderização ou quando `name` mudar
     useEffect(() => {
-        // Esta função será chamada sempre que o valor do `name` mudar
         console.log(name); // Exibe o valor atual do `name` no console
-    }, [name]); // O hook depende do `name`, então será chamado sempre que `name` mudar
+    }, [name]); // Reexecuta sempre que `name` for alterado
 
     return (
         <>
-            <h2>Bem vindo ao UseEffectPage!</h2>
+            <h2>Aprenda o useEffect</h2>
             {/* Input para o nome */}
             <input
                 placeholder="Nome"
                 value={name}
+                // Atualiza o estado `name` com o valor digitado no input
                 onChange={(event) => setName(event.target.value)} />
             <br />
             {/* Input para a senha */}
             <input
                 placeholder="Senha"
                 value={password}
+                // Atualiza o estado `password` com o valor digitado no input
                 onChange={(event) => setPassword(event.target.value)} />
         </>
     );

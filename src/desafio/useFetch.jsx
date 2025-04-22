@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
 
-// Define um componente funcional chamado UseFetch que recebe uma propriedade `url`.
+// Componente funcional que recebe a propriedade `url`
 const UseFetch = ({ url }) => {
-    // Declara um estado chamado `urlResult` e uma função para atualizá-lo, `setUrlResult`.
-    // O estado inicial é uma string vazia.
+
+    // Declara o estado `urlResult` com valor inicial como string vazia
     const [urlResult, setUrlResult] = useState('');
 
-    // O hook useEffect é utilizado para realizar efeitos colaterais em componentes funcionais.
     useEffect(() => {
-        // Realiza uma requisição para a URL fornecida.
+        // Faz uma requisição para a URL recebida
         fetch(url)
-            .then((response) => response.json()) // Converte a resposta para JSON.
-            .then((data) => setUrlResult(data))  // Atualiza o estado `urlResult` com os dados recebidos.
-            .catch(console.error); // Captura e loga qualquer erro ocorrido durante o fetch.
-    }, [url]); // O array de dependências contém `url`. O efeito é executado sempre que `url` muda.
+            .then((response) => response.json()) // Converte a resposta para JSON
+            .then((data) => setUrlResult(data))  // Atualiza o estado com os dados recebidos
+            .catch(console.error);              // Exibe o erro no console, se houver
+    }, [url]); // Executa o efeito sempre que a `url` mudar
 
-    // O componente retorna o estado `urlResult`, que contém os dados obtidos pela requisição.
+    // Retorna os dados obtidos pela requisição
     return urlResult;
 }
 
